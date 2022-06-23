@@ -9,11 +9,7 @@ describe("searchCandies", () => {
     expect(searchCandies("Ma", 2)).toEqual(["Mars"]);
   });
 
-  it("it returns candies that start with S and their price is lower than 10", () => {
-    expect(searchCandies("S", 10)).toEqual([
-      "Skitties",
-      "Skittles",
-      "Starburst",
-    ]);
+  it("it returns candies that start with S and their price is lower than 4", () => {
+    expect(searchCandies("S", 4)).toEqual(["Skitties", "Skittles"]);
   });
 });
