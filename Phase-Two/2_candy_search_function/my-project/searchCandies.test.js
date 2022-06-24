@@ -12,4 +12,8 @@ describe("searchCandies", () => {
   it("it returns candies that start with S and their price is lower than 4", () => {
     expect(searchCandies("S", 4)).toEqual(["Skitties", "Skittles"]);
   });
+
+  it("it returns candies that match the search if it is lowercase", () => {
+    expect(searchCandies("ma", 10)).toEqual(["Mars", "Maltesers"]);
+  });
 });

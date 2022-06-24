@@ -15,22 +15,37 @@ const candies = [
 ];
 
 const searchCandies = (name, price) => {
+  caseName = name.toLowerCase();
+
   const filteredPrice = candies
     .filter((candy) => candy.price < price)
     .map((candy) => {
-      return candy.name;
+      names = candy.name.toLowerCase();
+      return names;
     });
+  console.log(filteredPrice);
 
-  const filteredName = candies
-    .filter((candy) => candy.name.includes(name))
+  const lowercaseName = candies.map((candy) => {
+    candy.name = candy.name.toLowerCase();
+    return candy.name;
+  });
+  console.log(lowercaseName);
+
+  const filteredName = lowercaseName
+    .filter((candy) => candy.startsWith(caseName))
     .map((candy) => {
-      return candy.name;
+      return candy;
     });
 
   let result = filteredPrice.filter((names) => filteredName.includes(names));
-  return result;
+
+  const searchResult = result.map((word) => {
+    return word[0].toUpperCase() + word.slice(1).toLowerCase();
+  });
+
+  return searchResult;
 };
 
-console.log(searchCandies("Ma", 10));
+console.log(searchCandies("S", 4));
 
 module.exports = searchCandies;
