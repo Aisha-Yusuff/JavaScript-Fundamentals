@@ -22,6 +22,7 @@ class ShoppingBasket {
 
   addItem(item) {
     this.allItems = this.allItems.concat(item);
+    console.log(this.allItems);
   }
 
   getTotalPrice() {
@@ -43,6 +44,6 @@ const basket = new ShoppingBasket();
 basket.addItem(new Candy("chocolate", 5.99));
 basket.addItem(new Candy("marshmallows", 1.99));
 
-console.log(basket);
+// console.log(basket);
 
-console.log(basket.getTotalPrice());
+// console.log(basket.getTotalPrice());
